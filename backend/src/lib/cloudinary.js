@@ -2,16 +2,16 @@
 //  so can get from website 
 
 import { v2 as cloudinary } from 'cloudinary';
-import {config} from 'dotenv';
+import dotenv from 'dotenv';
 
-
+ dotenv.config();
 // Configuration
-    cloudinary.config({ 
-        cloud_name: process.env.CLOUDINARY_CLOUD_NAME, 
-        api_key: process.env.CLOUDINARY_API_KEY, 
-        api_secret: process.env.CLOUDINARY_API_SECRET, // Click 'View API Keys' above to copy your API secret
-    });
+cloudinary.config({ 
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME, 
+    api_key: process.env.CLOUDINARY_API_KEY, 
+    api_secret: process.env.CLOUDINARY_API_SECRET, 
+  });
 
-    export default cloudinary
+    export default cloudinary;
 
 //cloudinary we have install already
