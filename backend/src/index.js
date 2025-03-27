@@ -23,7 +23,7 @@ app.use(cors({
   }));
 
 app.use("/api/auth", authRouter); // importing all routes from auth_rout
-app.use("/api/message", messageRouter);
+app.use("/api/message", messageRouter); //for message 
 
 app.listen(PORT, () => { //dyanic port call
     console.log('Server is running on port',PORT);

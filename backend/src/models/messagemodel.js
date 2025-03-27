@@ -24,3 +24,5 @@ const messageSchema = new mongoose.Schema({
 
  const Message = mongoose.model("Message", messageSchema)//always remenber module name will be singular and 1st letter capital
  export default Message
+
+ //sender and receiver id req

@@ -10,7 +10,7 @@ export const protectedRoute = async (req, res, next) => {
         return res.status(401).json({ message: "Unauthorized token not found" });}
    //decoding the the token and verifiyign it
      const decodetoken = jwt.verify(token, process.env.JWT_SECRET);
-     if(!decodetoken){
+     if(!decodetoken){ 
         return res.status(401).json({ message: "Unauthorized token unverified" });
         }
     // token mai jo id hai usse user ka pata and sending to req

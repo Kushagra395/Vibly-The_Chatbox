@@ -2,7 +2,7 @@ import express from 'express';
 import { protectedRoute } from '../middleware/auth_Protected_Route.js';
 import { getMessages, getUserForSidebar,sendMessage } from '../controllers/message_controller(logic).js';
 
-const router = express.Router();
+const router = express.Router(); 
 
 
 router.get("/users",protectedRoute, getUserForSidebar) // user jo sidebar mai dikhenge

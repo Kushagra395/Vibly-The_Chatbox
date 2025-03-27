@@ -31,6 +31,8 @@ const userSchema = new mongoose.Schema({
 //  full name
 //  pswd
 //  profile pic
+
 // and id will be autogiven by it so no need to worry about that
+//this is main schema for user
 
 
