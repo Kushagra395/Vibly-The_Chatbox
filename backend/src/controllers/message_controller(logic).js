@@ -1,5 +1,6 @@
 import User from "../models/usermodel.js"
 import Message from "../models/messagemodel.js"
+import cloudinary from "../lib/cloudinary.js"
 
 
 //we want every user to fetch of get but not ourself in the sidebar keeping this in mind
@@ -52,7 +53,7 @@ export const sendMessage = async(req, res) => {
         senderId:myId,
         recieverId:anotherpersonId,
         text:text,
-        imageUrl:imageUrl
+        image:imageUrl
         })
         await newmessage.save()
         res.status(200).json(newmessage)

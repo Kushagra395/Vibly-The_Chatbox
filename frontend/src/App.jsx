@@ -9,9 +9,11 @@ import ProfilePage from './pages/ProfilePage'
 import { UseAuthStore } from './Store/UseAuthStore(zustand)'
 import { Loader } from 'lucide-react'
 import {Toaster} from "react-hot-toast"
+import { UsethemeStore } from './Store/UsethemeStore(zustand)'
 
  //we have also install cors in backend so because frontend and backend are on diffrent port so cors is used to link them 
 const App = () => {
+   const {theme} = UsethemeStore;
   
   
   const {isCheckingAuth,checkAuth,authUser} = UseAuthStore();
@@ -32,8 +34,8 @@ const App = () => {
  
      
   return (
-
-    <div>
+ console.log(theme),
+    <div data-theme="theme">
     <Navbar/>
     <Routes>
       <Route path='/' element={authUser ? <HomePage/>:  <Navigate to="/login"/>}/>
