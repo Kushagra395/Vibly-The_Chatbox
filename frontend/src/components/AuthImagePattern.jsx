@@ -2,7 +2,7 @@ import React from 'react';
 
 const AuthImagePattern = ({ title, subtitle }) => {
   return (
-    <div className="hidden lg:flex items-center justify-center bg-gradient-to-br from-gray-1000 to-gray-900 p-12">
+    <div className="hidden lg:flex items-center justify-center bg-gradient-to-br from-gray-1000 to-gray-900 p-12 relative">
       <div className="max-w-md text-center">
         {/* Floating chat bubbles - dark theme */}
         <div className="relative mb-12 mx-auto w-64 h-64 flex items-center justify-center">
@@ -24,6 +24,11 @@ const AuthImagePattern = ({ title, subtitle }) => {
           {title}
         </h2>
         <p className="text-gray-300/80">{subtitle}</p>
+        
+        {/* Footer positioned absolutely at the bottom */}
+        <footer className="absolute bottom-4 left-0 right-0 text-center text-gray-400 text-sm">
+        Crafted by @Kushagra
+        </footer>
 
         <style jsx>{`
           @keyframes float {
