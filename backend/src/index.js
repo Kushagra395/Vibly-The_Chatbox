@@ -6,12 +6,16 @@ import cookieParser from 'cookie-parser'
 import cors from 'cors' //we  are trying to send data from frontend to backend on diffrent port so using cors to link
 
 import { connectDB } from './lib/db.js';
+import { server,app,io } from './lib/socket.js';
 
 //  dyanamic database setup by env
 dotenv.config();
 const PORT = process.env.PORT;
 
-const app = express();
+
+//socket.io now listen server par kaarnage and ap pehle hi define kar diya hai socket.js mai 
+
+ 
 app.use(express.json());
 app.use(cookieParser());
 
@@ -25,7 +29,7 @@ app.use(cors({
 app.use("/api/auth", authRouter); // importing all routes from auth_rout
 app.use("/api/message", messageRouter); //for message 
 
-app.listen(PORT, () => { //dyanic port call
+server.listen(PORT, () => { //dyanic port call
     console.log('Server is running on port',PORT);
      connectDB();     // connect db call jo lb ke db.js mai hai
 })

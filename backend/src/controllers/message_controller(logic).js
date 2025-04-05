@@ -1,6 +1,7 @@
 import User from "../models/usermodel.js"
 import Message from "../models/messagemodel.js"
 import cloudinary from "../lib/cloudinary.js"
+import { getReceiverSocketId,io } from "../lib/socket.js"
 
 
 //we want every user to fetch of get but not ourself in the sidebar keeping this in mind
@@ -56,9 +57,15 @@ export const sendMessage = async(req, res) => {
         image:imageUrl
         })
         await newmessage.save()
+        console.log("newmessage saved",newmessage)
         res.status(200).json(newmessage)
 
       //todo ==>> here will cone real time chat by using socket.io
+      const receiversocketid= getReceiverSocketId(anotherpersonId)
+      if(receiversocketid){
+      
+        io.to(receiversocketid).emit("newmessage",newmessage)
+      }
 
 
     } catch (error) {
