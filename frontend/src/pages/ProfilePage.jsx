@@ -80,7 +80,7 @@ function ProfilePage() {
                 </div>
                 <p className="px-4 py-2.5 bg-base-200 rounded-lg border">{authUser?.email}</p>
               </div>
-            </div> //
+            </div> 
   
             <div className="mt-6 bg-base-300 rounded-xl p-6">
               <h2 className="text-lg font-medium  mb-4">Account Information</h2>
