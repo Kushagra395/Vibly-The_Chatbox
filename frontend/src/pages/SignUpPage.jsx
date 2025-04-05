@@ -35,12 +35,7 @@ function SignUpPage() {
     <div className="min-h-screen grid lg:grid-cols-2">
      
 
-      {/* right side */}
- 
-      <AuthImagePattern
-        title="Your Community, Your Vibely !"
-        subtitle="Chat. Connect. Vibe."
-      /> 
+      
 
         {/* left side */}
         <div className="flex flex-col justify-center items-center p-6 sm:p-12">
@@ -60,23 +55,28 @@ function SignUpPage() {
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
-  <div className="form-control">
-    <label className="label">
-      <span className="label-text font-medium">User Name</span>
-    </label>
-    <div className="relative">
-      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-        <UserCircle2 className="size-5  z-25 text-base-content/40" /> // user icon
-      </div>
-      <input
-        type="text"
-        className={`input input-bordered w-full pl-10`}
-        placeholder="Night Owl"
-        value={formData.fullname}
-      />
-    </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text font-medium">User Name</span>
+              </label>
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <UserCircle2 className="size-5  z-25 text-base-content/40" /> // user icon
+                </div>
+                <input
+                  type="text"
+                  className={`input input-bordered w-full pl-10`}
+                  placeholder="Night Owl"
+                  value={formData.fullname}
+                  onChange={(e) => setFormData({ ...formData, fullname: e.target.value })}
+                />
+                
+              </div>
+              <div>
     <p className=" text-red-500 text-xs text-base-content/60 mt-2 ml-1">  * Don't use your real name</p>
   </div>
+              
+            </div>
 
             <div className="form-control">
               <label className="label">
@@ -147,6 +147,12 @@ function SignUpPage() {
           </div>
         </div>
       </div>
+       {/* right side */}
+ 
+       <AuthImagePattern
+        title="Your Community, Your Vibely !"
+        subtitle="Chat. Connect. Vibe."
+      /> 
     </div>
   );
 }

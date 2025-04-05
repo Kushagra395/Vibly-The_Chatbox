@@ -22,11 +22,7 @@ const LoginPage = () => {
     <div className="h-screen grid lg:grid-cols-2">
      
 
-      {/* Right Side - Image/Pattern */}
-      <AuthImagePattern
-        title={"Ready to vibe again!"}
-        subtitle={"Sign in to Vibely – Chat, Connect, and Keep the Vibe Going!"}
-      />
+      
         {/* Left Side - Form */}
         <div className="flex flex-col justify-center items-center p-6 sm:p-12">
         <div className="w-full max-w-md space-y-8">
@@ -115,6 +111,13 @@ const LoginPage = () => {
           </div>
         </div>
       </div>
+
+
+       {/* Right Side - Image/Pattern */}
+       <AuthImagePattern
+        title={"Ready to vibe again!"}
+        subtitle={"Sign in to Vibely – Chat, Connect, and Keep the Vibe Going!"}
+      />
     </div>
     
   );
