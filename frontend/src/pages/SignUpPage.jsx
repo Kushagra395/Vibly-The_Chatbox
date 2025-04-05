@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { UseAuthStore } from '../Store/UseAuthStore(zustand)'
-import { Eye, EyeOff, Loader2, Lock, Mail, MailCheck, MessageCircleMoreIcon, MessageSquare, MessageSquareCodeIcon, User, User2, UserCircle2 } from "lucide-react";
+import { Eye, EyeOff, Loader2, Lock, Mail, MailCheck, MessageCircleDashed, MessageCircleMoreIcon, MessageSquare, MessageSquareCodeIcon, User, User2, UserCircle2 } from "lucide-react";
 import { Link } from 'react-router-dom';
 import AuthImagePattern from '../components/AuthImagePattern';
 import toast from 'react-hot-toast';
@@ -33,8 +33,17 @@ function SignUpPage() {
   
   return (
     <div className="min-h-screen grid lg:grid-cols-2">
-      {/* left side */}
-      <div className="flex flex-col justify-center items-center p-6 sm:p-12">
+     
+
+      {/* right side */}
+ 
+      <AuthImagePattern
+        title="Your Community, Your Vibely !"
+        subtitle="Chat. Connect. Vibe."
+      /> 
+
+        {/* left side */}
+        <div className="flex flex-col justify-center items-center p-6 sm:p-12">
         <div className="w-full max-w-md space-y-8">
             {/* LOGO */}
           <div className="text-center mb-8">
@@ -43,7 +52,7 @@ function SignUpPage() {
                 className="size-12 rounded-xl bg-primary/10 flex items-center justify-center 
               group-hover:bg-primary/20 transition-colors"
               >
-                <MessageCircleMoreIcon className="size-6 text-primary" />
+                <MessageCircleDashed className="size-6 text-primary" />
               </div>
               <h1 className="text-2xl font-bold mt-2">Create New Account</h1>
               <p className="text-base-content/60">Get started with your free account</p>
@@ -51,23 +60,23 @@ function SignUpPage() {
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text font-medium">Full Name</span>
-              </label>
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <UserCircle2 className="size-5 text-base-content/40" /> // user icon
-                </div>
-                <input
-                  type="text"
-                  className={`input input-bordered w-full pl-10`}
-                  placeholder="John Doe"
-                  value={formData.fullname}
-                  onChange={(e) => setFormData({ ...formData, fullname: e.target.value })}
-                />
-              </div>
-            </div>
+  <div className="form-control">
+    <label className="label">
+      <span className="label-text font-medium">User Name</span>
+    </label>
+    <div className="relative">
+      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+        <UserCircle2 className="size-5  z-25 text-base-content/40" /> // user icon
+      </div>
+      <input
+        type="text"
+        className={`input input-bordered w-full pl-10`}
+        placeholder="Night Owl"
+        value={formData.fullname}
+      />
+    </div>
+    <p className=" text-red-500 text-xs text-base-content/60 mt-2 ml-1">  * Don't use your real name</p>
+  </div>
 
             <div className="form-control">
               <label className="label">
@@ -93,7 +102,7 @@ function SignUpPage() {
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Lock className="size-5 text-base-content/40" />
+                  <Lock className="size-5 z-20 text-base-content/40" />
                 </div>
                 <input
                   type={showPassword ? "text" : "password"}
@@ -138,13 +147,6 @@ function SignUpPage() {
           </div>
         </div>
       </div>
-
-      {/* right side */}
- 
-      <AuthImagePattern
-        title="Your Community, Your Vibely !"
-        subtitle="Chat. Connect. Vibe."
-      /> 
     </div>
   );
 }
