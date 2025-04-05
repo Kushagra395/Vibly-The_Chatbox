@@ -89,7 +89,7 @@ const ChatInput = () => {
 
           <button
             type="button"
-            className={`hidden sm:flex btn btn-circle
+            className={` flex btn btn-circle
                      ${imagepreview ? "text-emerald-500" : "text-zinc-400"}`}
             onClick={() => fileinputref.current?.click()}
           >
