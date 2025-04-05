@@ -5,7 +5,7 @@ import { axiosInstance } from "../lib/axios";
 import toast from "react-hot-toast";
 import { io} from 'socket.io-client'
 
-const Base_url = "http://localhost:5001"
+const Base_url = import.meta.env.MODE==='development'?"http://localhost:5001":"/";
 
 //axios is a library that makes it easy to make HTTP requests in JavaScript
 //it's like a messenger that goes to the backend server and says "hey can you do this for me?"
